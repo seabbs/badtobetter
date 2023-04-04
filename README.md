@@ -18,7 +18,7 @@ We would argue that the time and resources required to write good code are well 
 
 ## What is good code?
 
-There are many definitions of good code, but for me the most important thing is that it should help us deal with all the issues above. In the rest of this document I will use the term "better" to refer to code that is better than the code in `bad` but not necessarily the best code possible.
+There are many definitions of good code, but for us the most important thing is that it should help us deal with all the issues above. In the rest of this document We will use the term "better" to refer to code that is better than the code in `bad` but not necessarily the best code possible.
 
 ## Before touching your keyboard
 
@@ -60,7 +60,7 @@ You should now be able to run your code and reproduce `bad/figure.png`. If you h
 
 ## Code style
 
-Code style is a very subjective topic and there are many different opinions on what makes good code. In this section we will look at some of the things that I have found useful for making code easier for me to understand. Whilst not universal best practices in general most people agree that they are good practice.
+Code style is a very subjective topic and there are many different opinions on what makes good code. In this section, we will look at some of the things that we have found useful for making code easier for me to understand. Whilst not universal best practices in general most people agree that they are good practice.
 
 - **Clear Function and file names.** Are the new names of these functions and files better (i.e. more clear) than the old names? If not, change them to fit the purpose of the function or file and their role in the analysis. Generally, easy to understand names are better than short names for making code easier to understand.
 
