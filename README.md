@@ -60,7 +60,7 @@ You should now be able to run your code and reproduce `bad/figure.png`. If you h
 
 ## Code style
 
-Code style is a very subjective topic and there are many different opinions on what makes good code. In this section, we will look at some of the things that we have found useful for making code easier for me to understand. Whilst not universal best practices in general most people agree that they are good practice.
+Code style is a very subjective topic and there are many different opinions on what makes good code. In this section, we will look at some of the things that we have found useful for making code easier to understand. Whilst not universal best practices, in general, most people agree that they are good practice.
 
 - **Clear Function and file names.** Are the new names of these functions and files better (i.e. more clear) than the old names? If not, change them to fit the purpose of the function or file and their role in the analysis. Generally, easy to understand names are better than short names for making code easier to understand.
 
