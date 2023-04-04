@@ -1,0 +1,6 @@
+{
+  "country": "Peru",
+  "prob_high_risk": 0.3,
+  "prob_exposure_hr": 0.7,
+  "prob_exposure_lr": 0.05
+}

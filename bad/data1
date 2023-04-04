@@ -1,0 +1,6 @@
+{
+  "Country": "Chile",
+  "high_risk_proportion": 0.2,
+  "high_risk_probability": 0.8,
+  "low_risk_probability": 0.05
+}

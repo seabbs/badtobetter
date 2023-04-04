@@ -1,0 +1,6 @@
+{
+  "country": "Chile",
+  "prob_high_risk": 0.2,
+  "prob_exposure_hr": 0.8,
+  "prob_exposure_lr": 0.05
+}
