@@ -9,3 +9,6 @@
 ^_targets.html$
 ^_targets$
 ^README\.Rmd$
+^_targets\.R$
+^_targets_r$
+^data-raw$

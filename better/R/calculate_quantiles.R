@@ -5,6 +5,8 @@
 #'
 #' @param x A numeric vector.
 #'
+#' @param ... Additional arguments to pass to [stats::quantile()].
+#' 
 #' @return A named numeric vector with the following names:
 #'  - `lo.q`: The lower quartile.
 #'  - `med`: The median.

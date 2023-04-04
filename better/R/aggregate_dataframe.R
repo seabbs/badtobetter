@@ -7,6 +7,7 @@
 #'
 #' @return A data.frame with the same columns as the output of [aggregate()].
 #' @export
+#' @importFrom stats aggregate
 #' @examples
 #' aggregate_dataframe(mpg ~ cyl, mtcars, mean)
 aggregate_dataframe <- function(...) {

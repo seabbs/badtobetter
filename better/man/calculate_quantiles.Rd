@@ -8,6 +8,8 @@ calculate_quantiles(x, ...)
 }
 \arguments{
 \item{x}{A numeric vector.}
+
+\item{...}{Additional arguments to pass to \code{\link[stats:quantile]{stats::quantile()}}.}
 }
 \value{
 A named numeric vector with the following names:

@@ -41,6 +41,7 @@
 #' - `high_risk`: A logical indicating whether the individual is high risk.
 #' - `outcome`: The number of infections.
 #'
+#' @importFrom stats runif rbinom
 #' @export
 #' @examples
 #' synthesize_population(
