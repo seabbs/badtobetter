@@ -396,7 +396,7 @@ tar_option_set(packages = c(&quot;purrr&quot;, &quot;here&quot;, &quot;jsonlite&
 <div id="targets" class="section level1">
 <h1>Targets</h1>
 <ul>
-<li>Read the parameters for a single country</li>
+<li>Read the parameters for each input file.</li>
 </ul>
 <pre class="r"><code>tar_target(params, {
   purrr::map(
@@ -406,7 +406,7 @@ tar_option_set(packages = c(&quot;purrr&quot;, &quot;here&quot;, &quot;jsonlite&
 #&gt; Define target params from chunk code.
 #&gt; Establish _targets.R and _targets_r/targets/params.R.</code></pre>
 <ul>
-<li>Synthesize a population with 4 strains of an infectious disease using the parameters we just read in for each country</li>
+<li>Synthesize a population with 4 strains of an infectious disease using the parameters we just read in for each country.</li>
 </ul>
 <pre class="r"><code>tar_target(
   pop,
