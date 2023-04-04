@@ -6,7 +6,7 @@
 ^output$
 ^bad$
 ^_targets.Rmd$
-^_targets.html$
+^_targets.md$
 ^_targets$
 ^README\.Rmd$
 ^_targets\.R$
