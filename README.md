@@ -11,7 +11,7 @@ We all have a lot of code that is not well written. The reason this is true for 
 - Maintain
 - Extend
 - Verify
-- Reproduce results
+- Reproduce results from
 - Generalise to new applications
 
 We would argue that the time and resources required to write good code are well worth the investment. In this repository we will look at some of the things that can be done to improve the code we have already written and to make it easier to write better code from the get go in the future.
