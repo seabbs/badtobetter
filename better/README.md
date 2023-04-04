@@ -63,12 +63,12 @@ the full analysis across an arbitary number of countries (specified as
 (i.e. they only update if a dependency has changed).
 
 There are many other workflows that would be considered best practice
-here. For more complex projects we might also want to consider a
-workflow management tools such as `targets` or `Make`. The key is
-focussing on verifiability, repeatability, generalisability, and
-maintainability. We could also have expanded on this example by
-including tests, more documentation, a vignette, and perhaps a
-`Dockerfile`.
+here. For example, we also might want to consider using `Make` or a
+simpler workflow where everything is brought together in a script or
+series of connected scripts. The key is focussing on verifiability,
+repeatability, generalisability, and maintainability. We could also have
+expanded on this example by including tests, more documentation, a
+vignette, and perhaps a `Dockerfile`.
 
 # How to use this repository
 

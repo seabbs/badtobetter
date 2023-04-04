@@ -43,7 +43,7 @@ To make it clear where the functions we are using are imported from and to avoid
 
 Below we provide a simple workflow for a single input (which has now been renamed to match the function it is calling). We also provide a `targets` based workflow (see `_targets.Rmd` for more on this) to run the full analysis across an arbitary number of countries (specified as `json` in the input folder) with caching for each interim step (i.e. they only update if a dependency has changed).
 
-There are many other workflows that would be considered best practice here. For more complex projects we might also want to consider a workflow management tools such as `targets` or `Make`. The key is focussing on verifiability, repeatability, generalisability, and maintainability. We could also have expanded on this example by including tests, more documentation, a vignette, and perhaps a `Dockerfile`.
+There are many other workflows that would be considered best practice here. For example, we also might want to consider using `Make` or a simpler workflow where everything is brought together in a script or series of connected scripts. The key is focussing on verifiability, repeatability, generalisability, and maintainability. We could also have expanded on this example by including tests, more documentation, a vignette, and perhaps a `Dockerfile`.
 
 # How to use this repository
 
