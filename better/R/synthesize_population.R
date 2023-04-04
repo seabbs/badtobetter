@@ -47,7 +47,8 @@
 #'  prob_high_risk = 0.1, prob_exposure_hr = 0.5, prob_exposure_lr = 0.1
 #' )
 synthesize_population <- function(num_individuals = 1000, prob_high_risk = 0.1,
-                                  prob_exposure_hr = 0.5, prob_exposure_lr,
+                                  prob_exposure_hr = 0.5,
+                                  prob_exposure_lr = 0.1,
                                   max_exposure_years = 30, num_strains = 4,
                                   country = "placeholder") {
   # create a container for data

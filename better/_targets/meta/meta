@@ -8,10 +8,10 @@ params|stem|76e7303e611757ca|6dd7f34eb6f094ca|5605e8774cde27ff|890816472||t19451
 plot_infections|function|3b9220f647f96491|||||||||||||||
 plot_population|stem|fee80bcb277253ec|408e925dcae3b02d|9cd9a0d658e5eb26|-1275291163||t19451.673474464s|f6039e03777d0a5f|190974|rds|local|vector|||0.19||
 pop|pattern|4e65cf3d6ac9fd12|27921080d720bf64||-1288138818||||6102|rds|local|vector||pop_8746ed74*pop_b0a916e7|0.307||
-pop_8746ed74|branch|16171fdaafcc5cbd|27921080d720bf64|3f52bc9ed2298e1a|789701474||t19451.6734682523s|7a163555a9841c76|3025|rds|local|vector|pop||0.153||
-pop_b0a916e7|branch|9de77c3b1c66d6db|27921080d720bf64|f897c1ab5c98c4d9|561904160||t19451.6734701901s|2851b4fd08070dae|3077|rds|local|vector|pop||0.154||
+pop_8746ed74|branch|16171fdaafcc5cbd|27921080d720bf64|1f64afc3fe5c710e|789701474||t19451.7503605791s|7a163555a9841c76|3025|rds|local|vector|pop||0.172||
+pop_b0a916e7|branch|9de77c3b1c66d6db|27921080d720bf64|33a8233c6bfc3555|561904160||t19451.7503625767s|2851b4fd08070dae|3077|rds|local|vector|pop||0.157||
 pop_sum|stem|b86ca6da4b704e18|d02b890431274264|05c4dbfe82bd4bbf|-1013726137||t19451.6734704421s|2c02ccb1d6d3878b|191|rds|local|vector|||0.01||
 save_plot|function|4d997e93cd5f2021|||||||||||||||
 save_pop_plot|stem|a52629b1882e1326|60dac1af88401215|9c22d13fd5711121|-507303258|output/population.png|t19451.6734870889s|d2ad9923e526d1f4|96054|file|local|vector|||1.085||
-synthesize_population|function|266fc7f5179beaba|||||||||||||||
+synthesize_population|function|e8cb473c0c6e9893|||||||||||||||
 ucfirst|function|aa152e2e11c890b4|||||||||||||||
