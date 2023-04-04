@@ -1,15 +1,14 @@
-# this converts the results of multi-column (output) aggregate to pure data.frame
-
-#' FUNCTION_TITLE
+#' Convert the results of multi-column (output) [aggregate()] to pure data.frame
 #'
-#' FUNCTION_DESCRIPTION
+#' @description This function converts the results of multi-column (output)
+#' [aggregate()] to pure data.frame.
 #'
-#' @param ... DESCRIPTION.
+#' @param ... Pass the same arguments as you would to [aggregate()].
 #'
-#' @return RETURN_DESCRIPTION
+#' @return A data.frame with the same columns as the output of [aggregate()].
 #' @export
 #' @examples
-#' # ADD_EXAMPLES_HERE
+#' aggregate_dataframe(mpg ~ cyl, mtcars, mean)
 aggregate_dataframe <- function(...) {
   do.call(data.frame, aggregate(...))
 }

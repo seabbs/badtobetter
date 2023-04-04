@@ -2,19 +2,20 @@
 % Please edit documentation in R/plot_infections.R
 \name{ucfirst}
 \alias{ucfirst}
-\title{FUNCTION_TITLE}
+\title{Convert the first character of a string to uppercase}
 \usage{
 ucfirst(str)
 }
 \arguments{
-\item{str}{DESCRIPTION.}
+\item{str}{A character string.}
 }
 \value{
-RETURN_DESCRIPTION
+A character string with the first character converted to uppercase.
 }
 \description{
-FUNCTION_DESCRIPTION
+This function converts the first character of a string to
+uppercase.
 }
 \examples{
-# ADD_EXAMPLES_HERE
+badtobetter:::ucfirst("hello")
 }

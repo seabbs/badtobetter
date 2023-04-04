@@ -2,19 +2,29 @@
 % Please edit documentation in R/plot_infections.R
 \name{plot_infections}
 \alias{plot_infections}
-\title{FUNCTION_TITLE}
+\title{Plot Infections by Individual}
 \usage{
 plot_infections(pop)
 }
 \arguments{
-\item{pop}{DESCRIPTION.}
+\item{pop}{A \link{data.frame} with the following columns and where each row is an
+individual:
+\itemize{
+\item \code{country}: The country of origin.
+\item \code{high_risk}: A logical indicating whether the individual is high risk.
+\item \code{outcome}: The number of infections.
+}}
 }
 \value{
-RETURN_DESCRIPTION
+A \link[ggplot2:ggplot]{ggplot2::ggplot} object.
 }
 \description{
-FUNCTION_DESCRIPTION
+This function plots the number of infections by individual
+stratified by country and risk group.
 }
 \examples{
-# ADD_EXAMPLES_HERE
+pop <- synthesize_population(
+ prob_high_risk = 0.1, prob_exposure_hr = 0.5, prob_exposure_lr = 0.1
+)
+plot_infections(pop)
 }

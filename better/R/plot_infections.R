@@ -1,13 +1,21 @@
-#' FUNCTION_TITLE
+#' Plot Infections by Individual
 #'
-#' FUNCTION_DESCRIPTION
+#' @description This function plots the number of infections by individual
+#' stratified by country and risk group.
 #'
-#' @param pop DESCRIPTION.
+#' @param pop A [data.frame] with the following columns and where each row is an
+#' individual:
+#' - `country`: The country of origin.
+#' - `high_risk`: A logical indicating whether the individual is high risk.
+#' - `outcome`: The number of infections.
 #'
-#' @return RETURN_DESCRIPTION
+#' @return A [ggplot2::ggplot] object.
 #' @export
 #' @examples
-#' # ADD_EXAMPLES_HERE
+#' pop <- synthesize_population(
+#'  prob_high_risk = 0.1, prob_exposure_hr = 0.5, prob_exposure_lr = 0.1
+#' )
+#' plot_infections(pop)
 plot_infections <- function(pop) {
   plot <- ggplot2::ggplot(pop) +
     ggplot2::aes(x = outcome, fill = country, alpha = high_risk) +
@@ -30,19 +38,34 @@ plot_infections <- function(pop) {
   return(plot)
 }
 
-#' FUNCTION_TITLE
+#' Add Summary statistics to infections plot
 #'
-#' FUNCTION_DESCRIPTION
+#' @description Add country level summary statistics to [plot_infections()]. The
+#' summary statistics are calculated using [calculate_quantiles()] and
+#' optionally [aggregate_dataframe()].
 #'
-#' @param plot DESCRIPTION.
-#' @param summary DESCRIPTION.
-#' @param ... DESCRIPTION.
+#' @param plot A [ggplot2::ggplot] object created by [plot_infections()].
 #'
-#' @return RETURN_DESCRIPTION
+#' @param summary A [data.frame] with the following columns:
+#' - `country`: The country of origin.
+#' - `outcome.lo.q`: The lower quartile of the number of infections.
+#' - `outcome.med`: The median of the number of infections.
+#' - `outcome.hi.q`: The upper quartile of the number of infections.
+#'
+#' This can be produced using [aggregate_dataframe()] and
+#' [calculate_quantiles()].
+#'
+#' @return A [ggplot2::ggplot] object.
 #' @export
 #' @examples
-#' # ADD_EXAMPLES_HERE
-add_summary_to_infections_plot <- function(plot, summary, ...) {
+#' pop <- synthesize_population(
+#'  prob_high_risk = 0.1, prob_exposure_hr = 0.5, prob_exposure_lr = 0.1
+#' )
+#' plot <- plot_infections(pop)
+#'
+#' summary <- aggregate_dataframe(outcome ~ 1, pop, calculate_quantiles)
+#' add_summary_to_infections_plot(plot, summary)
+add_summary_to_infections_plot <- function(plot, summary) {
   plot <- plot +
     ggplot2::geom_vline(
       data = summary,
@@ -66,15 +89,16 @@ add_summary_to_infections_plot <- function(plot, summary, ...) {
   return(plot)
 }
 
-#' FUNCTION_TITLE
+#' Convert the first character of a string to uppercase
 #'
-#' FUNCTION_DESCRIPTION
+#' @description This function converts the first character of a string to
+#' uppercase.
 #'
-#' @param str DESCRIPTION.
+#' @param str A character string.
 #'
-#' @return RETURN_DESCRIPTION
+#' @return A character string with the first character converted to uppercase.
 #' @examples
-#' # ADD_EXAMPLES_HERE
+#' badtobetter:::ucfirst("hello")
 ucfirst <- function(str) {
   paste0(toupper(substr(str, 1, 1)), substr(str, 2, nchar(str)))
 }

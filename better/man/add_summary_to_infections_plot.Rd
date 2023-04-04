@@ -2,23 +2,38 @@
 % Please edit documentation in R/plot_infections.R
 \name{add_summary_to_infections_plot}
 \alias{add_summary_to_infections_plot}
-\title{FUNCTION_TITLE}
+\title{Add Summary statistics to infections plot}
 \usage{
-add_summary_to_infections_plot(plot, summary, ...)
+add_summary_to_infections_plot(plot, summary)
 }
 \arguments{
-\item{plot}{DESCRIPTION.}
+\item{plot}{A \link[ggplot2:ggplot]{ggplot2::ggplot} object created by \code{\link[=plot_infections]{plot_infections()}}.}
 
-\item{summary}{DESCRIPTION.}
+\item{summary}{A \link{data.frame} with the following columns:
+\itemize{
+\item \code{country}: The country of origin.
+\item \code{outcome.lo.q}: The lower quartile of the number of infections.
+\item \code{outcome.med}: The median of the number of infections.
+\item \code{outcome.hi.q}: The upper quartile of the number of infections.
+}
 
-\item{...}{DESCRIPTION.}
+This can be produced using \code{\link[=aggregate_dataframe]{aggregate_dataframe()}} and
+\code{\link[=calculate_quantiles]{calculate_quantiles()}}.}
 }
 \value{
-RETURN_DESCRIPTION
+A \link[ggplot2:ggplot]{ggplot2::ggplot} object.
 }
 \description{
-FUNCTION_DESCRIPTION
+Add country level summary statistics to \code{\link[=plot_infections]{plot_infections()}}. The
+summary statistics are calculated using \code{\link[=calculate_quantiles]{calculate_quantiles()}} and
+optionally \code{\link[=aggregate_dataframe]{aggregate_dataframe()}}.
 }
 \examples{
-# ADD_EXAMPLES_HERE
+pop <- synthesize_population(
+ prob_high_risk = 0.1, prob_exposure_hr = 0.5, prob_exposure_lr = 0.1
+)
+plot <- plot_infections(pop)
+
+summary <- aggregate_dataframe(outcome ~ 1, pop, calculate_quantiles)
+add_summary_to_infections_plot(plot, summary)
 }

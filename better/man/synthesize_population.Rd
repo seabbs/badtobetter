@@ -2,39 +2,67 @@
 % Please edit documentation in R/synthesize_population.R
 \name{synthesize_population}
 \alias{synthesize_population}
-\title{FUNCTION_TITLE}
+\title{Simulate the number of infections individuals in a population have had}
 \usage{
 synthesize_population(
-  num_samples = 1000,
-  prob_high_risk,
-  prob_exposure_hr,
+  num_individuals = 1000,
+  prob_high_risk = 0.1,
+  prob_exposure_hr = 0.5,
   prob_exposure_lr,
   max_exposure_years = 30,
   num_strains = 4,
-  country
+  country = "placeholder"
 )
 }
 \arguments{
-\item{num_samples}{DESCRIPTION.}
+\item{num_individuals}{Numeric, defaults to 1000. The number of individuals
+to simulate}
 
-\item{prob_high_risk}{DESCRIPTION.}
+\item{prob_high_risk}{Numeric, defaults to 0.1. The probability of being
+high risk.}
 
-\item{prob_exposure_hr}{DESCRIPTION.}
+\item{prob_exposure_hr}{Numeric, defaults to 0.5. The probability of
+exposure for high risk individuals.}
 
-\item{prob_exposure_lr}{DESCRIPTION.}
+\item{prob_exposure_lr}{Numeric, defaults to 0.1. The probability of
+exposure for low risk individuals.}
 
-\item{max_exposure_years}{DESCRIPTION.}
+\item{max_exposure_years}{Numeric, defaults to 30. The maximum number of
+years an individual can be exposed to the pathogen.}
 
-\item{num_strains}{DESCRIPTION.}
+\item{num_strains}{Numeric, defaults to 4. The number of strains of the
+pathogen.}
 
-\item{country}{DESCRIPTION.}
+\item{country}{Character, defaults to "placeholder". The country of origin
+for the simulated population.}
 }
 \value{
-RETURN_DESCRIPTION
+A \link{data.frame} with the following columns:
+\itemize{
+\item \code{id}: The individual's id.
+\item \code{country}: The country of origin.
+\item \code{high_risk}: A logical indicating whether the individual is high risk.
+\item \code{outcome}: The number of infections.
+}
 }
 \description{
-FUNCTION_DESCRIPTION
+This function simulates the number of infections individuals in
+a population have had from a pathogen with a number of immunising strains
+(with no cross-immunity).
+}
+\details{
+The population is assumed to have two risk groups
+(high and low) and the probability of being in the high risk group is
+specified by the user. The probability of exposure to a strain is also
+specified by the user. The number of infections is calculated using the
+number of years an individual has been exposed to the pathogen combined with
+the risk of infection in each year. These exposures are then assigned a
+strain. As the pathogen is assumed to be immunising the number of
+infections for each individual is then the number of unique strains an
+individual has been exposed to.
 }
 \examples{
-# ADD_EXAMPLES_HERE
+synthesize_population(
+ prob_high_risk = 0.1, prob_exposure_hr = 0.5, prob_exposure_lr = 0.1
+)
 }

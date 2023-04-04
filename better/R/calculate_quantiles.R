@@ -1,15 +1,20 @@
-#' FUNCTION_TITLE
+#' Calculate pre-specified quantiles
 #'
-#' FUNCTION_DESCRIPTION
+#' @description This function calculates pre-specified quantiles 
+#' using the [stats::quantile()] function.
 #'
-#' @param x DESCRIPTION.
+#' @param x A numeric vector.
 #'
-#' @return RETURN_DESCRIPTION
+#' @return A named numeric vector with the following names:
+#'  - `lo.q`: The lower quartile.
+#'  - `med`: The median.
+#'  - `hi.q`: The upper quartile.
 #' @export
+#' @importFrom stats quantile
 #' @examples
-#' # ADD_EXAMPLES_HERE
-calculate_quantiles <- function(x) {
-  result <- quantile(x, probs = (1:3) / 4)
+#' calculate_quantiles(c(1, 2, 3, 4, 5))
+calculate_quantiles <- function(x, ...) {
+  result <- stats::quantile(x, probs = (1:3) / 4, ...)
   names(result) <- c("lo.q", "med", "hi.q")
   return(result)
 }

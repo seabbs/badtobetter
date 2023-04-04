@@ -6,6 +6,15 @@
 \usage{
 save_plot(plot, file, path, ...)
 }
+\arguments{
+\item{plot}{A \link[ggplot2:ggplot]{ggplot2::ggplot} object.}
+
+\item{file}{The name of the file to save.}
+
+\item{path}{The path to save the file to.}
+
+\item{...}{Additional arguments to pass to \code{\link[ggplot2:ggsave]{ggplot2::ggsave()}}.}
+}
 \description{
 Save a plot and return the path for targets
 }

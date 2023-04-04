@@ -2,19 +2,20 @@
 % Please edit documentation in R/aggregate_dataframe.R
 \name{aggregate_dataframe}
 \alias{aggregate_dataframe}
-\title{FUNCTION_TITLE}
+\title{Convert the results of multi-column (output) \code{\link[=aggregate]{aggregate()}} to pure data.frame}
 \usage{
 aggregate_dataframe(...)
 }
 \arguments{
-\item{...}{DESCRIPTION.}
+\item{...}{Pass the same arguments as you would to \code{\link[=aggregate]{aggregate()}}.}
 }
 \value{
-RETURN_DESCRIPTION
+A data.frame with the same columns as the output of \code{\link[=aggregate]{aggregate()}}.
 }
 \description{
-FUNCTION_DESCRIPTION
+This function converts the results of multi-column (output)
+\code{\link[=aggregate]{aggregate()}} to pure data.frame.
 }
 \examples{
-# ADD_EXAMPLES_HERE
+aggregate_dataframe(mpg ~ cyl, mtcars, mean)
 }

@@ -2,21 +2,29 @@
 % Please edit documentation in R/synthesize_population.R
 \name{allocate_results}
 \alias{allocate_results}
-\title{FUNCTION_TITLE}
+\title{Allocate a data.frame to store the results of the simulation}
 \usage{
-allocate_results(num_samples, country)
+allocate_results(num_individuals, country)
 }
 \arguments{
-\item{num_samples}{DESCRIPTION.}
+\item{num_individuals}{Numeric, defaults to 1000. The number of individuals
+to simulate}
 
-\item{country}{DESCRIPTION.}
+\item{country}{Character, defaults to "placeholder". The country of origin
+for the simulated population.}
 }
 \value{
-RETURN_DESCRIPTION
+A \link{data.frame} with the following columns:
+\itemize{
+\item \code{id}: The individual's id.
+\item \code{country}: The country of origin.
+\item \code{high_risk}: A logical indicating whether the individual is high risk.
+\item \code{outcome}: The number of infections.
+}
 }
 \description{
-FUNCTION_DESCRIPTION
+Allocate a data.frame to store the results of the simulation
 }
 \examples{
-# ADD_EXAMPLES_HERE
+badtobetter:::allocate_results(10, "placeholder")
 }

@@ -2,19 +2,25 @@
 % Please edit documentation in R/calculate_quantiles.R
 \name{calculate_quantiles}
 \alias{calculate_quantiles}
-\title{FUNCTION_TITLE}
+\title{Calculate pre-specified quantiles}
 \usage{
-calculate_quantiles(x)
+calculate_quantiles(x, ...)
 }
 \arguments{
-\item{x}{DESCRIPTION.}
+\item{x}{A numeric vector.}
 }
 \value{
-RETURN_DESCRIPTION
+A named numeric vector with the following names:
+\itemize{
+\item \code{lo.q}: The lower quartile.
+\item \code{med}: The median.
+\item \code{hi.q}: The upper quartile.
+}
 }
 \description{
-FUNCTION_DESCRIPTION
+This function calculates pre-specified quantiles
+using the \code{\link[stats:quantile]{stats::quantile()}} function.
 }
 \examples{
-# ADD_EXAMPLES_HERE
+calculate_quantiles(c(1, 2, 3, 4, 5))
 }
