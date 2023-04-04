@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Sam"
+  given-names: "Abbott"
+  orcid: "https://orcid.org/0000-0001-8057-8037"
+- family-names: "Carl"
+  given-names: "Pearson"
+  orcid: "https://orcid.org/0000-0003-0701-7860"
+title: Better computational practice - Bad to better"
+version: 1.0.0
+doi: 10.5281/zenodo.7799448
+date-released: 2023-04-04
+url: "https://github.com/seabbs/badtobetter"
