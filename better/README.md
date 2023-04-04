@@ -74,8 +74,9 @@ vignette, and perhaps a `Dockerfile`.
 
 To use quick start below and to work through the examples you will first
 need to have the repository locally. Once this is the case set your work
-directory to the root of the repository. You can then use the following
-to install the packages this repository depends on and load the package.
+directory inside the `better` folder of the repository. You can then use
+the following to install the packages this repository depends on and
+load the package.
 
 ``` r
 install.packages("devtools")
