@@ -1,11 +1,11 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-- family-names: "Sam"
-  given-names: "Abbott"
+- family-names: "Abbott"
+  given-names: "Sam"
   orcid: "https://orcid.org/0000-0001-8057-8037"
-- family-names: "Carl"
-  given-names: "Pearson"
+- family-names: "Pearson"
+  given-names: "Carl"
   orcid: "https://orcid.org/0000-0003-0701-7860"
 title: Better computational practice - Bad to better"
 version: 1.0.0
