@@ -417,11 +417,11 @@ tar_option_set(packages = c(&quot;purrr&quot;, &quot;here&quot;, &quot;jsonlite&
 <ul>
 <li>Summarise by country.</li>
 </ul>
-<pre class="r"><code>tar_target(pop_sum , {
+<pre class="r"><code>tar_target(pop_sum, {
   aggregate_dataframe(outcome ~ country, pop, calculate_quantiles)
 })
-#&gt; Define target pop_sum  from chunk code.
-#&gt; Establish _targets.R and _targets_r/targets/pop_sum .R.</code></pre>
+#&gt; Define target pop_sum from chunk code.
+#&gt; Establish _targets.R and _targets_r/targets/pop_sum.R.</code></pre>
 <ul>
 <li>Plot the number of infections by risk group per individual in the population.</li>
 </ul>
@@ -438,7 +438,9 @@ tar_option_set(packages = c(&quot;purrr&quot;, &quot;here&quot;, &quot;jsonlite&
 </ul>
 <pre class="r"><code>tar_file(
   save_pop_plot,
-  save_plot(plot_population, &quot;population.png&quot;, &quot;figures&quot;)
+  save_plot(
+    plot = plot_population, file = &quot;population.png&quot;, path = &quot;output&quot;
+  )
 )
 #&gt; Establish _targets.R and _targets_r/targets/save_pop_plot.R.</code></pre>
 </div>

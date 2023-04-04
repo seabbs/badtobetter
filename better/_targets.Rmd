@@ -65,7 +65,7 @@ tar_target(
 
 - Summarise by country.
 
-```{targets pop_sum , tar_simple = TRUE}
+```{targets pop_sum, tar_simple = TRUE}
 aggregate_dataframe(outcome ~ country, pop, calculate_quantiles)
 ```
 
