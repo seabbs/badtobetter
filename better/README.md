@@ -57,10 +57,11 @@ use the `package::function` style throughout.
 
 Below we provide a simple workflow for a single input (which has now
 been renamed to match the function it is calling). We also provide a
-`targets` based workflow (see `_targets.Rmd` for more on this) to run
-the full analysis across an arbitary number of countries (specified as
-`json` in the input folder) with caching for each interim step
-(i.e. they only update if a dependency has changed).
+`targets` based workflow (see `_targets.Rmd` for more on this or
+`targets.md` for a rendered version) to run the full analysis across an
+arbitary number of countries (specified as `json` in the input folder)
+with caching for each interim step (i.e. they only update if a
+dependency has changed).
 
 There are many other workflows that would be considered best practice
 here. For example, we also might want to consider using `Make` or a
