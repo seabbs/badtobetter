@@ -14,3 +14,9 @@ save_plot <- function(plot, file, path, ...) {
   suppressWarnings(ggplot2::ggsave(path, plot, ...))
   return(path)
 }
+
+globalVariables(
+  c("outcome.lo.q", "outcome.med", "outcome.hi.q", "outcome", "country",
+    "high_risk"
+  )
+)

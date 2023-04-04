@@ -15,9 +15,11 @@ knitr::opts_chunk$set(
 
 # What does this code do?
 
-Now we have refactored the code it should now be more clear that it takes summary parameters for a country and from this generates a synthetic population of individuals stratified into high and low risk groups with a disease that has multiple strains and is immunising (with no cross protection by strainn). The code then provides tools for calculating summary statistics for the number of infections per individual and provides a summary plot stratified by country.
+Now we have refactored the code it should now be more clear that it takes summary parameters for a country and from this generates a synthetic population of individuals stratified into high and low risk groups with a disease that has multiple strains and is immunising (with no cross protection by strain). The code then provides tools for calculating summary statistics for the number of infections per individual and provides a summary plot stratified by country.
 
 # How have we reorganised the code?
+
+We moved each step of the code into functions aiming to capture the smallest possible unit of analysis (here this is by country). For longer steps we introduced multiple internal functions each of which plays a single role. 
 
 # How have we refactored the code
 
