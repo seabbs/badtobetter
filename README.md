@@ -12,7 +12,7 @@ We all have a lot of code that is not well written. The reason this is true for 
 - Extend
 - Verify
 - Reproduce results from
-- Generalise to new applications
+- Generalize to new applications
 
 We would argue that the time and resources required to write good code are well worth the investment. In this repository we will look at some of the things that can be done to improve the code we have already written and to make it easier to write better code from the get go in the future.
 
@@ -28,31 +28,31 @@ There are many definitions of good code, but for us the most important thing is 
 
 - What could have been done to make the code in `bad` easier to understand and use?
 
-## Code organisation
+## Code organization
 
-One of the big issues with the code in `bad` is a lack of clear organisation. The code is all in one file and there are no comments to help the reader understand what is going on.
+One of the big issues with the code in `bad` is a lack of clear organization. The code is all in one file and there are no comments to help the reader understand what is going on.
 
 - Copy the contents of `bad` to a new folder called `better_for_me`.
 
 - Add some comments to `better_for_me` to help the reader understand what is going on. Focus on identifying the core steps of the analysis and adding comments to help the reader understand what is going on at each step.
 
 > Some tips for writing comments:
-> - start by writing out “pseudocode”: plain language description of the process / steps of your work
+> - start by writing out “pseudo-code”: plain language description of the process / steps of your work
 > - given an overall picture (what + where), you can write down the details of
 each larger step directly in the files
-> - with the pseudocode in place, start writing the code by following that description; as you recognize additional detail needed to understand the code (or steps you forgot), expand your comments
+> - with the pseudo-code in place, start writing the code by following that description; as you recognize additional detail needed to understand the code (or steps you forgot), expand your comments
 
-- Move code into each analysis step into separate functions where possible (at the moment don't worry about making the functions work). This will help to make the code more readable and easier to understand. It can be a good idea to store these functions in their own folder (e.g. `bad/R`) to keep the code organised.
+- Move code into each analysis step into separate functions where possible (at the moment don't worry about making the functions work). This will help to make the code more readable and easier to understand. It can be a good idea to store these functions in their own folder (e.g. `bad/R`) to keep the code organized.
 
-- Take any other organisational steps you think would help to make the code easier to understand and use but don't worry about making the code work or about spending to long on this step.
+- Take any other organizational steps you think would help to make the code easier to understand and use but don't worry about making the code work or about spending to long on this step.
 
-> If you now look at `better` you should see that the code is organised into a number of files and has comments to help the reader understand what is going on. The code in `better` is also organised into a package so that it can be imported and used by other code (though perhaps not in this toy case). This can often be a good idea but is not a requirement for well organised code. How does this organisation differ from your solution? What do you think the trade-offs, if any, are between the two approaches?
+> If you now look at `better` you should see that the code is organized into a number of files and has comments to help the reader understand what is going on. The code in `better` is also organized into a package so that it can be imported and used by other code (though perhaps not in this toy case). This can often be a good idea but is not a requirement for well organized code. How does this organization differ from your solution? What do you think the trade-offs, if any, are between the two approaches?
 
 - Now how would you summarise what the code is doing? Does this answer differ from your initial thoughts? If so, why do you think this is?
 
 ## Making your code functional
 
-You should now have a better understanding of what the code in `bad` is doing and how it is organised. The next step is to make the code work. This will involve going through your code from beginning to end and making sure each function you have created is supplied with the inputs required in the code (and that these are specified in the function definition) and that the outputs of each function are used in the next step of the analysis.
+You should now have a better understanding of what the code in `bad` is doing and how it is organized. The next step is to make the code work. This will involve going through your code from beginning to end and making sure each function you have created is supplied with the inputs required in the code (and that these are specified in the function definition) and that the outputs of each function are used in the next step of the analysis.
 
 > If you get stuck at any point, look at the code in `better` to see how it works but remember that this is not the only way to do things.
 
