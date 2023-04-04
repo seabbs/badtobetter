@@ -72,7 +72,7 @@ Code style is a very subjective topic and there are many different opinions on w
 
 ## Exploring `better`
 
-You should now have a functional version of `bad` that is much easier to understand and use. However, learning best practices is a long road and there is always more to potentially do. If you are interested in learning more, you can explore the code in `better` to see some of the approaches we have taken. In particular, you might want to thing about how we have set everything up for the single country case and then generalised with more advanced tools. This approach is often your friend for breaking down complex problems.
+You should now have a functional version of `bad` that is much easier to understand and use. However, learning best practices is a long road and there is always more to potentially do. If you are interested in learning more, you can explore the code in `better` to see some of the approaches we have taken that go beyond what we have already covered. In particular, you might want to thing about how we have set everything up for the single country case and then generalised with more advanced tools. This approach is often your friend for breaking down complex problems.
 
 If you would like to make `better` better then a sensible first step would be to consider which parts of the code may be simplified by using external packages (such as those from the `tidyverse`).  You might also want to think about which parts of the current implementation prevent the code from being used in other contexts (e.g. other countries).
 
