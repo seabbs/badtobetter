@@ -6,8 +6,7 @@
 #'
 #' @param path The path to save the file to.
 #'
-#' @param ... Additional arguments to pass to [ggplot2::ggsave()].
-#' @importFrom ggplot2 ggsave
+#' @param ... Additional arguments to pass to [ggplot2::ggsave()]
 save_plot <- function(plot, file, path, ...) {
   dir.create(path, recursive = TRUE, showWarnings = FALSE)
   path <- file.path(path, file)

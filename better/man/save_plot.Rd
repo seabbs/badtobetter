@@ -13,7 +13,7 @@ save_plot(plot, file, path, ...)
 
 \item{path}{The path to save the file to.}
 
-\item{...}{Additional arguments to pass to \code{\link[ggplot2:ggsave]{ggplot2::ggsave()}}.}
+\item{...}{Additional arguments to pass to \code{\link[ggplot2:ggsave]{ggplot2::ggsave()}}}
 }
 \description{
 Save a plot and return the path for targets
