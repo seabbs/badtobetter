@@ -41,7 +41,6 @@
 #' - `high_risk`: A logical indicating whether the individual is high risk.
 #' - `outcome`: The number of infections.
 #'
-#' @importFrom stats runif rbinom
 #' @export
 #' @examples
 #' synthesize_population(
@@ -56,7 +55,7 @@ synthesize_population <- function(num_individuals = 1000, prob_high_risk = 0.1,
 
   # create a logical vector of which individuals will be high risk
   # TRUE == high risk
-  which_high_risk <- runif(num_individuals) < prob_high_risk
+  which_high_risk <- stats::runif(num_individuals) < prob_high_risk
   population$high_risk <- which_high_risk
 
   # use that vector to get each individuals risk
@@ -65,7 +64,7 @@ synthesize_population <- function(num_individuals = 1000, prob_high_risk = 0.1,
   # for each person in the population...
   for (id in 1:num_individuals) {
     # get their number of exposures
-    num_exposures <- rbinom(1, max_exposure_years, prob_risk[id])
+    num_exposures <- stats::rbinom(1, max_exposure_years, prob_risk[id])
 
     # get the strain of those exposures
     exposure_strains <- sample(1:num_strains, num_exposures, replace = TRUE)

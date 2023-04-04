@@ -19,19 +19,29 @@ Now we have refactored the code it should now be more clear that it takes summar
 
 # How have we reorganised the code?
 
-We moved each step of the code into functions aiming to capture the smallest possible unit of analysis (here this is by country). For longer steps we introduced multiple internal functions each of which plays a single role. 
-
-# How have we refactored the code
-
-The code here demonstrates a functional and literate approach to re-factoring the code in `bad.R`. We have broken the code into three steps:
+We moved each step of the code into functions (stored in the `R` folder) aiming to capture the smallest possible unit of analysis (here this is by country). For longer steps we introduced multiple internal functions each of which plays a single role. This results in the following code structure:
 
  - synthesize a population (`synthesize_population.R`),
  - extract features from that population in an analysis (`aggregate_dataframe.R` and `calculate_quantiles.R`),
  - and finally visualize the synthetic population + analysis results (`plot_infections.R`).
 
-These are stored in the `R` directory as documented functions and we use a `DESCRIPTION` file to manage our dependencies and set up our code for use in a package.
+On top of moving to a functional approach we have also wrapped our new functions in a light R package (using `usethis` to help us). This means that we now have dependency management via the `DESCRIPTION` file, a standard layout from which to work, and infrastructure for documentation and testing. 
 
-Below we provide a simple workflow for a single input (which has now been renamed to match the function it is calling). We also provide a `targets` based workflow (see `_targets.Rmd` for more on this) to run the full analysis.
+As documentation is generally a helpful step for any refactor we have also made use of `roxygen` comments to document each of our new functions as well as providing examples highlighting how they work individually.
+
+# How have we refactored the code
+
+As noted in the reorganisation section we have taken a highly functional approach to refactoring and keeping DRY in mind have made functions at the lowest level of analysis. 
+
+We have also introduced whitespace throughout and in general tried to keep to a single operation per line at most.
+
+To make understanding the inputs easier we have also updated the required input schema so that the arguments match the arguments of the `synthesize_population` function. 
+
+To make it clear where the functions we are using are imported from and to avoid import a large number of functions we have adapted the code to use the `package::function` style throughout.
+
+# How have we reimplemented the multiple country workflow
+
+Below we provide a simple workflow for a single input (which has now been renamed to match the function it is calling). We also provide a `targets` based workflow (see `_targets.Rmd` for more on this) to run the full analysis across an arbitary number of countries (specified as `json` in the input folder) with caching for each interim step (i.e. they only update if a dependency has changed).
 
 There are many other workflows that would be considered best practice here. For more complex projects we might also want to consider a workflow management tools such as `targets` or `Make`. The key is focussing on verifiability, repeatability, generalisability, and maintainability. We could also have expanded on this example by including tests, more documentation, a vignette, and perhaps a `Dockerfile`.
 
@@ -55,6 +65,7 @@ After using `devtools::load_all()` to load the package, you can use the inbuilt 
 library(jsonlite) # for reading json files
 library(here) # for finding files relative to project root
 params <- read_json(here("input/chile.json"))
+params
 ```
 
 - Synthesize a population with 4 strains of an infectious disease using the parameters we just read-in.
@@ -68,6 +79,7 @@ pop <- do.call(badtobetter::synthesize_population, params)
 
 ```{r summarize-population}
 pop_sum <- aggregate_dataframe(outcome ~ 1, pop, calculate_quantiles)
+pop_sum
 ```
 
 - Plot the number of infections by risk group per individual in the population.

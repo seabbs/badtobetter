@@ -7,17 +7,17 @@ Now we have refactored the code it should now be more clear that it
 takes summary parameters for a country and from this generates a
 synthetic population of individuals stratified into high and low risk
 groups with a disease that has multiple strains and is immunising (with
-no cross protection by strainn). The code then provides tools for
+no cross protection by strain). The code then provides tools for
 calculating summary statistics for the number of infections per
 individual and provides a summary plot stratified by country.
 
 # How have we reorganised the code?
 
-# How have we refactored the code
-
-The code here demonstrates a functional and literate approach to
-re-factoring the code in `bad.R`. We have broken the code into three
-steps:
+We moved each step of the code into functions (stored in the `R` folder)
+aiming to capture the smallest possible unit of analysis (here this is
+by country). For longer steps we introduced multiple internal functions
+each of which plays a single role. This results in the following code
+structure:
 
 -   synthesize a population (`synthesize_population.R`),
 -   extract features from that population in an analysis
@@ -25,14 +25,42 @@ steps:
 -   and finally visualize the synthetic population + analysis results
     (`plot_infections.R`).
 
-These are stored in the `R` directory as documented functions and we use
-a `DESCRIPTION` file to manage our dependencies and set up our code for
-use in a package.
+On top of moving to a functional approach we have also wrapped our new
+functions in a light R package (using `usethis` to help us). This means
+that we now have dependency management via the `DESCRIPTION` file, a
+standard layout from which to work, and infrastructure for documentation
+and testing.
+
+As documentation is generally a helpful step for any refactor we have
+also made use of `roxygen` comments to document each of our new
+functions as well as providing examples highlighting how they work
+individually.
+
+# How have we refactored the code
+
+As noted in the reorganisation section we have taken a highly functional
+approach to refactoring and keeping DRY in mind have made functions at
+the lowest level of analysis.
+
+We have also introduced whitespace throughout and in general tried to
+keep to a single operation per line at most.
+
+To make understanding the inputs easier we have also updated the
+required input schema so that the arguments match the arguments of the
+`synthesize_population` function.
+
+To make it clear where the functions we are using are imported from and
+to avoid import a large number of functions we have adapted the code to
+use the `package::function` style throughout.
+
+# How have we reimplemented the multiple country workflow
 
 Below we provide a simple workflow for a single input (which has now
 been renamed to match the function it is calling). We also provide a
 `targets` based workflow (see `_targets.Rmd` for more on this) to run
-the full analysis.
+the full analysis across an arbitary number of countries (specified as
+`json` in the input folder) with caching for each interim step
+(i.e. they only update if a dependency has changed).
 
 There are many other workflows that would be considered best practice
 here. For more complex projects we might also want to consider a
@@ -68,6 +96,18 @@ library(jsonlite) # for reading json files
 library(here) # for finding files relative to project root
 #> here() starts at /Users/seabbs/Downloads/badtobetter/better
 params <- read_json(here("input/chile.json"))
+params
+#> $country
+#> [1] "Chile"
+#> 
+#> $prob_high_risk
+#> [1] 0.2
+#> 
+#> $prob_exposure_hr
+#> [1] 0.8
+#> 
+#> $prob_exposure_lr
+#> [1] 0.05
 ```
 
 -   Synthesize a population with 4 strains of an infectious disease
@@ -82,6 +122,9 @@ pop <- do.call(badtobetter::synthesize_population, params)
 
 ``` r
 pop_sum <- aggregate_dataframe(outcome ~ 1, pop, calculate_quantiles)
+pop_sum
+#>   outcome.lo.q outcome.med outcome.hi.q
+#> 1            1           1            3
 ```
 
 -   Plot the number of infections by risk group per individual in the

@@ -12,7 +12,6 @@
 #'  - `med`: The median.
 #'  - `hi.q`: The upper quartile.
 #' @export
-#' @importFrom stats quantile
 #' @examples
 #' calculate_quantiles(c(1, 2, 3, 4, 5))
 calculate_quantiles <- function(x, ...) {
