@@ -29,7 +29,7 @@ tar_unscript()
 
 # Globals
 
-We first define some global options/functions common to all targets. The function below plots a histogram of ozone concentrations, and our histogram target will need it.
+We first define some global options/functions common to all targets.
 
 ```{targets example-globals, tar_globals = TRUE}
 library(targets)
