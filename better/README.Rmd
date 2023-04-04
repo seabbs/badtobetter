@@ -17,8 +17,9 @@ knitr::opts_chunk$set(
 
 Now we have refactored the code it should now be more clear that it takes summary parameters for a country and from this generates a synthetic population of individuals stratified into high and low risk groups with a disease that has multiple strains and is immunising (with no cross protection by strainn). The code then provides tools for calculating summary statistics for the number of infections per individual and provides a summary plot stratified by country.
 
+# How have we reorganised the code?
 
-# How we have refactored the code
+# How have we refactored the code
 
 The code here demonstrates a functional and literate approach to re-factoring the code in `bad.R`. We have broken the code into three steps:
 
@@ -31,9 +32,6 @@ These are stored in the `R` directory as documented functions and we use a `DESC
 Below we provide a simple workflow for a single input (which has now been renamed to match the function it is calling). We also provide a `targets` based workflow (see `_targets.Rmd` for more on this) to run the full analysis.
 
 There are many other workflows that would be considered best practice here. For more complex projects we might also want to consider a workflow management tools such as `targets` or `Make`. The key is focussing on verifiability, repeatability, generalisability, and maintainability. We could also have expanded on this example by including tests, more documentation, a vignette, and perhaps a `Dockerfile`.
-
-# What is the code doing? 
-
 
 # How to use this repository
 
@@ -57,10 +55,11 @@ library(here) # for finding files relative to project root
 params <- read_json(here("input/chile.json"))
 ```
 
-- Synthesize a population with 4 strains of an infectious disease using the parameters we just read in.
+- Synthesize a population with 4 strains of an infectious disease using the parameters we just read-in.
 
 ```{r synthesize-population}
-pop <- do.call(synthesize_population, params)
+library(badtobetter)
+pop <- do.call(badtobetter::synthesize_population, params)
 ```
 
 - Summarise the population.

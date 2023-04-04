@@ -1,3 +1,13 @@
+#' FUNCTION_TITLE
+#'
+#' FUNCTION_DESCRIPTION
+#'
+#' @param pop DESCRIPTION.
+#'
+#' @return RETURN_DESCRIPTION
+#' @export
+#' @examples
+#' # ADD_EXAMPLES_HERE
 plot_infections <- function(pop) {
   plot <- ggplot2::ggplot(pop) +
     ggplot2::aes(x = outcome, fill = country, alpha = high_risk) +
@@ -20,6 +30,18 @@ plot_infections <- function(pop) {
   return(plot)
 }
 
+#' FUNCTION_TITLE
+#'
+#' FUNCTION_DESCRIPTION
+#'
+#' @param plot DESCRIPTION.
+#' @param summary DESCRIPTION.
+#' @param ... DESCRIPTION.
+#'
+#' @return RETURN_DESCRIPTION
+#' @export
+#' @examples
+#' # ADD_EXAMPLES_HERE
 add_summary_to_infections_plot <- function(plot, summary, ...) {
   plot <- plot +
     ggplot2::geom_vline(
@@ -44,6 +66,15 @@ add_summary_to_infections_plot <- function(plot, summary, ...) {
   return(plot)
 }
 
+#' FUNCTION_TITLE
+#'
+#' FUNCTION_DESCRIPTION
+#'
+#' @param str DESCRIPTION.
+#'
+#' @return RETURN_DESCRIPTION
+#' @examples
+#' # ADD_EXAMPLES_HERE
 ucfirst <- function(str) {
   paste0(toupper(substr(str, 1, 1)), substr(str, 2, nchar(str)))
 }

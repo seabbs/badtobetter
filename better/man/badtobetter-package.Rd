@@ -6,7 +6,7 @@
 \alias{badtobetter-package}
 \title{badtobetter: Goes from Bad to Better Code}
 \description{
-We demonstrate moving from bad code to better code.
+We demonstrate moving from bad code to better code. We include a simple single country example as well as a more complex example for multiple countries.
 }
 \author{
 \strong{Maintainer}: Sam Abbott \email{contact@samabbott.co.uk} (\href{https://orcid.org/0000-0001-8057-8037}{ORCID})

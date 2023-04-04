@@ -4,6 +4,23 @@
 #  prob_high_risk, the probability of being high risk
 #  prob_exposure_hr, the exposure probability for high risk individuals
 #  prob_exposure_lr, the exposure probability for low risk individuals
+
+#' FUNCTION_TITLE
+#'
+#' FUNCTION_DESCRIPTION
+#'
+#' @param num_samples DESCRIPTION.
+#' @param prob_high_risk DESCRIPTION.
+#' @param prob_exposure_hr DESCRIPTION.
+#' @param prob_exposure_lr DESCRIPTION.
+#' @param max_exposure_years DESCRIPTION.
+#' @param num_strains DESCRIPTION.
+#' @param country DESCRIPTION.
+#'
+#' @return RETURN_DESCRIPTION
+#' @export
+#' @examples
+#' # ADD_EXAMPLES_HERE
 synthesize_population <- function(num_samples = 1000, prob_high_risk,
                                   prob_exposure_hr, prob_exposure_lr,
                                   max_exposure_years = 30, num_strains = 4,
@@ -38,6 +55,17 @@ synthesize_population <- function(num_samples = 1000, prob_high_risk,
 }
 
 # utility function for pre-allocating the population data structure
+
+#' FUNCTION_TITLE
+#'
+#' FUNCTION_DESCRIPTION
+#'
+#' @param num_samples DESCRIPTION.
+#' @param country DESCRIPTION.
+#'
+#' @return RETURN_DESCRIPTION
+#' @examples
+#' # ADD_EXAMPLES_HERE
 allocate_results <- function(num_samples, country) {
   return(data.frame(
     id = 1:num_samples, country = country, high_risk = NA,

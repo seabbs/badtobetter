@@ -4,7 +4,7 @@
 \alias{save_plot}
 \title{Save a plot and return the path for targets}
 \usage{
-save_plot(plot, filename, path, ...)
+save_plot(plot, file, path, ...)
 }
 \description{
 Save a plot and return the path for targets
