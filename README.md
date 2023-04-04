@@ -14,6 +14,8 @@ We all have a lot of code that is not well written. The reason this is true for 
 - Reproduce results
 - Generalise to new applications
 
+We would argue that the time and resources required to write good code are well worth the investment. In this repository we will look at some of the things that can be done to improve the code we have already written and to make it easier to write better code from the get go in the future.
+
 ## What is good code?
 
 There are many definitions of good code, but for me the most important thing is that it should help us deal with all the issues above. In the rest of this document I will use the term "better" to refer to code that is better than the code in `bad` but not necessarily the best code possible.
